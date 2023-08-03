@@ -18,10 +18,26 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult ConfigurarJuego(){
-
+        ViewBag.listaCategorias = Juego.obtenerCategorias();
+        ViewBag.listaDificultades = Juego.obtenerDificultades();
         return View();
     }
-
+    public IActionResult Comenzar(string username, int dificultad, int categoria){
+        if (!Juego.CargarPartida(username, dificultad, categoria));
+            return RedirectToAction("ConfigurarJuego");
+        return RedirectToAction("Jugar");
+    }
+    public IActionResult Jugar(){
+        ViewBag.pregunta = Juego.obtenerProximaPregunta();
+        if (ViewBag.pregunta == null)
+            return View("Fin");
+        ViewBag.respuestas = Juego.obtenerProximasRespuestas(ViewBag.pregunta.IDPregunta);
+        return View("Juego");
+    }
+    [HttpPost] public IActionResult VerificarRespuesta(int IDPregunta, int IDRespuesta){
+        ViewBag.correcto = Juego.verificarRespuesta(IDPregunta, IDRespuesta);
+        return View("Respuesta");
+    }
     public IActionResult Privacy()
     {
         return View();

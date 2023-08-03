@@ -10,7 +10,7 @@ static class Juego{
     public static List<Dificultad> obtenerDificultades(){
         return BD.ObtenerDificultades();
     }
-    public static void CargarPartida(string username, int dificultad, int categoria){
+    public static bool CargarPartida(string username, int dificultad, int categoria){
         _username = username;
         _preguntas = BD.ObtenerPreguntas(dificultad, categoria);
         _respuestas = BD.ObtenerRespuestas(_preguntas)
@@ -20,6 +20,9 @@ static class Juego{
             Random r = new Random();
             return r.Next(_respuestas.Count() - 1);
         }
+        else
+            return new Pregunta();
+        
     }
     public static List<Respuesta> obtenerProximasRespuestas(int IDPregunta){
         List<Respuesta> respuestas = new List<Respuesta>();

@@ -1,3 +1,5 @@
+namespace TP7_Aboudara_Garbarino_Kalinscky.Models;
+
 public class Respuesta{
     public int IDRespuesta;
     public int IDPregunta;

@@ -1,7 +1,9 @@
-class Pregunta{
-    int IDPregunta;
-    int IDCategoria;
-    int IDDificultad;
-    string enunciado;
-    string? foto;
+namespace TP7_Aboudara_Garbarino_Kalinscky.Models;
+
+public class Pregunta{
+    public int IDPregunta;
+    public int IDCategoria;
+    public int IDDificultad;
+    public string enunciado;
+    public string? foto;
 }

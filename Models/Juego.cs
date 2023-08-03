@@ -1,4 +1,8 @@
-static class Juego{
+using System.Collections.Generic;
+
+namespace TP7_Aboudara_Garbarino_Kalinscky.Models;
+
+public static class Juego{
     private static string _username;
     private static int _puntajeActual = 0;
     private static int _cantidadPreguntasCorrectas = 0;
@@ -13,12 +17,13 @@ static class Juego{
     public static bool CargarPartida(string username, int dificultad, int categoria){
         _username = username;
         _preguntas = BD.ObtenerPreguntas(dificultad, categoria);
-        _respuestas = BD.ObtenerRespuestas(_preguntas)
+        _respuestas = BD.ObtenerRespuestas(_preguntas);
+        return _preguntas.Count() > 0;
     }
     public static Pregunta obtenerProximaPregunta(){
         if (_preguntas.Count() > 0){
             Random r = new Random();
-            return r.Next(_respuestas.Count() - 1);
+            return _preguntas[r.Next(_respuestas.Count() - 1)];
         }
         else
             return new Pregunta();
@@ -35,7 +40,7 @@ static class Juego{
     }
     public static bool verificarRespuesta(int IDPregunta, int IDRespuesta){
         Pregunta pregunta;
-        Respuesta respuesta;
+        Respuesta respuesta = new Respuesta();
         for (int i = 0; i < _respuestas.Count(); i++)
         {
             if (_respuestas[i].IDRespuesta == IDRespuesta){

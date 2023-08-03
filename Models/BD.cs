@@ -1,12 +1,16 @@
 using System.Data.SqlClient;
 using Dapper;
+using System.Collections.Generic;
 
-namespace TP7-Aboudara-Garbarino-Kalinscky.Models;
+namespace TP7_Aboudara_Garbarino_Kalinscky.Models;
+
+
 
 public static class BD
 {
     private static string _connectionString = @"Server=localhost; DataBase=TP7-Aboudara-Garbarino-Kalinscky;Trusted_Connection=True;";
 
+    public static List<Categoria> listaCategorias = new List<Categoria>();
     public static List<Categoria> ObtenerCategorias() 
     {
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -14,8 +18,10 @@ public static class BD
             string sql = "SELECT * FROM Categorias";
             listaCategorias = db.Query<Categoria>(sql).ToList();
         }
+        return listaCategorias;
     }
 
+    public static List<Dificultad> listaDificultades = new List<Dificultad>();
     public static List<Dificultad> ObtenerDificultades() 
     {
         using(SqlConnection db = new SqlConnection(_connectionString))
@@ -23,29 +29,51 @@ public static class BD
             string sql = "SELECT * FROM Dificultades";
             listaDificultades = db.Query<Dificultad>(sql).ToList();
         }
+        return listaDificultades;
     }
-    
+
+    public static List<Pregunta> listaPreguntas = new List<Pregunta>();
      public static List<Pregunta> ObtenerPreguntas(int dificultad, int categoria)
+    {
+        
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            
+            if (dificultad == -1) {
+                if (categoria == -1) {
+                    string sql = "SELECT * FROM Preguntas";
+                    listaPreguntas = db.Query<Pregunta>(sql).ToList();
+                }
+                else {
+                    string sql = "SELECT * FROM Preguntas WHERE FK_IdCategoria = @pCategoria";
+                    listaPreguntas = db.Query<Pregunta>(sql,new {pCategoria = categoria}).ToList();
+                }
+            }
+            else if(categoria == -1){
+                string sql = "SELECT * FROM Preguntas WHERE FK_IdDificultad = @pDificultad";
+                listaPreguntas = db.Query<Pregunta>(sql,new {pDificultad = dificultad}).ToList();
+            }
+            else {
+            string sql = "SELECT * FROM Preguntas WHERE FK_IdCategoria = @pCategoria AND FK_IdDificultad = @pDificultad";
+            listaPreguntas = db.Query<Pregunta>(sql,new {pCategoria = categoria, pDificultad = dificultad}).ToList();
+            }
+            
+        }
+        return listaPreguntas;
+    }
+
+    private static List<Respuesta> listaRespuestas = new List<Respuesta>();
+    public static List<Respuesta> ObtenerRespuestas(List<Pregunta> preguntas)
     {
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Preguntas WHERE FK_IdCategoria = @pCategoria AND FK_IdDificultad = @pDificultad";
-            listaDificultades = db.Query<Dificultad>(sql,new {pCategoria = categoria, pDificultad = dificultad}).ToList();
+            string sql = "";
+            foreach (Pregunta preg in preguntas)
+            {
+                sql = "SELECT * FROM Respuestas WHERE FK_IdPregunta = @pPregunta";
+                listaRespuestas.Add(db.QueryFirstOrDefault<Respuesta>(sql, new {pPregunta = preg.IDPregunta}));
+            }
         }
+        return listaRespuestas;
     }
-    /*
-        ObtenerPreguntas(int dificultad, int categoria): Recibe un id de dificultad y un id de categoría. Devuelve una lista con las preguntas que se van a utilizar en el juego.
-        Aclaración:
-
-        Si dificultad = -1, trae las preguntas de todas las dificultades.
-
-        Si categoria = -1, trae las preguntas de todas las categorías.
-
-        ObtenerRespuestas(List<Pregunta> preguntas): Recibe la lista de preguntas que se va a usar en el juego, y devuelve una lista con todas las respuestas para dichas preguntas.
-        Ayuda 1 : Para conseguir las respuestas, hay que ir recorriendo la lista de preguntas!!
-
-        Ayuda 2 : El método AddRange de cualquier lista, permite agregar varios objetos a una lista en una sola operación. Podría servirte para agregar todas las respuestas que vienen de cada pregunta a la lista general de respuestas…
-
-        (Crear además todos los atributos y métodos privados que se requieran vistos en clase, para poder conectar el proyecto con la base de datos)
-    */
 }

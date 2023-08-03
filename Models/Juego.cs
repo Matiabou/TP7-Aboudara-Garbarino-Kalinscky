@@ -1,4 +1,4 @@
-static class Juego{
+public static class Juego{
     private static string _username;
     private static int _puntajeActual = 0;
     private static int _cantidadPreguntasCorrectas = 0;
@@ -13,7 +13,7 @@ static class Juego{
     public static bool CargarPartida(string username, int dificultad, int categoria){
         _username = username;
         _preguntas = BD.ObtenerPreguntas(dificultad, categoria);
-        _respuestas = BD.ObtenerRespuestas(_preguntas)
+        _respuestas = BD.ObtenerRespuestas(_preguntas);
     }
     public static Pregunta obtenerProximaPregunta(){
         if (_preguntas.Count() > 0){

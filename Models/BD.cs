@@ -1,7 +1,7 @@
 using System.Data.SqlClient;
 using Dapper;
 
-namespace TP7-Aboudara-Garbarino-Kalinscky.Models;
+namespace TP7_Aboudara_Garbarino_Kalinscky.Models;
 
 public static class BD
 {

@@ -1,4 +1,4 @@
-class Dificultad{
-    int IDDificultad;
-    string nombre;
+public class Dificultad{
+    public int IDDificultad;
+    public string nombre;
 }

@@ -1,8 +1,8 @@
-class Respuesta{
-    int IDRespuesta;
-    int IDPregunta;
-    int opcion;
-    string contenido;
-    bool correcta;
-    string? foto;
+public class Respuesta{
+    public int IDRespuesta;
+    public int IDPregunta;
+    public int opcion;
+    public string contenido;
+    public bool correcta;
+    public string? foto;
 }

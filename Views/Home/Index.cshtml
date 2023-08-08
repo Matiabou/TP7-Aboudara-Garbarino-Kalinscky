@@ -1,5 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<img src="/Fotos/" >
-<a href='@Url.Action("ConfigurarJuego")'><button type="button" class="btn btn-primary btn-lg" style="">Configurar juego</button></a>
+<div>
+<img style="margin: 3%; width: 20%;height: auto" src="/Fotos/Logo.png">
+</div>
+<div class="index-menu">
+<a href='@Url.Action("ConfigurarJuego")'><button type="button" class="btn btn-primary btn-lg"><b>Configurar Juego</b></button></a>
+<a href='@Url.Action("ConfigurarJuego")'><button type="button" class="btn btn-primary btn-lg"><b>Jugar</b></button></a>
+</div>

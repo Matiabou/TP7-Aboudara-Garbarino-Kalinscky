@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 14px;
 }
@@ -19,4 +24,11 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+.Header-Layout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #258cfb;
 }

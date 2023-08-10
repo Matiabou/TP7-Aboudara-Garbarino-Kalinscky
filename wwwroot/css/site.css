@@ -51,3 +51,13 @@ div{
   text-align: center;
   background-color: #258cfb;
 }
+.configuracion button{
+  font-size:x-large;
+  background-color: rgb(224, 224, 224);
+  border: 2px solid black;
+  color: black;
+}
+.configuracion button:hover{
+  background-color: rgb(63, 63, 63);
+  border: 2px solid rgb(63, 63, 63);
+}

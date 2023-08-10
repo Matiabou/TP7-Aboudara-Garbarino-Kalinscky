@@ -1,0 +1,21 @@
+
+<div>
+    <h1>Elige la Dificultad</h1>
+    <select class="form-select" aria-label="Default select example">
+        <option selected value="-1">Mezcladas</option>
+        @foreach (Dificultad item in ViewBag.listaDificultades)
+        {
+            <option value=@item.IDDificultad>@item.nombre</option>
+        }
+    </select>
+</div>
+<div>
+    <h1>Elige la Categoria</h1>
+    <select class="form-select" aria-label="Default select example">
+        <option selected value="-1">Mezcladas</option>
+        @foreach (Categoria item in ViewBag.listaCategoria)
+        {
+            <option value=@item.IDCategoria>@item.nombre</option>
+        }
+    </select>
+</div>

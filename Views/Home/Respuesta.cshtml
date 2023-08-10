@@ -1,0 +1,10 @@
+@if (ViewBag.correcto) {
+<h1 class="correcto">¡¡Respuesta correcta!!</h1>
+}
+else {
+    <h1 class="incorrecto">Respuesta equivocada 😔</h1>
+    <h3>La respuesta correcta era</h3>
+    <h2>ViewBag.respuestaCorrecta</h2>
+}
+
+<a href='@Url.Action("Jugar")'><button class="btn btn-primary btn-lg"><b>Proxima pregunta</b></button></a>

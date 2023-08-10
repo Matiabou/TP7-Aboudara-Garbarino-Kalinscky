@@ -36,6 +36,12 @@ public class HomeController : Controller
     }
     [HttpPost] public IActionResult VerificarRespuesta(int IDPregunta, int IDRespuesta){
         ViewBag.correcto = Juego.verificarRespuesta(IDPregunta, IDRespuesta);
+        var nashe = Juego.obtenerProximasRespuestas(IDPregunta);
+        foreach (var item in nashe)
+        {
+            if (item.correcto)
+            ViewBag.respuestaCorrecta = item.contenido;
+        }
         return View("Respuesta");
     }
     public IActionResult Privacy()

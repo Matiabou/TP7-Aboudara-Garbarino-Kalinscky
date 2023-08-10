@@ -8,6 +8,8 @@ public static class Juego{
     public static int _cantidadPreguntasCorrectas = 0;
     private static List<Pregunta> _preguntas = new List<Pregunta>();
     private static List<Respuesta> _respuestas = new List<Respuesta>();
+
+    
     public static List<Categoria> obtenerCategorias(){
         return BD.ObtenerCategorias();
     }

@@ -10,29 +10,21 @@
     <link rel="stylesheet" href="~/TP7_Aboudara_Garbarino_Kalinscky.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header class="Header-Layout">
        <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" asp-controller="Home" asp-action="Privacy">
-      <img src="/Fotos/Logo.png" alt="Logo" width="10%" height="10%" class="d-inline-block align-text-top">
-      PreguntadOrt
+    <a class="navbar-brand" href="#">
+      <img src="/Fotos/Logo.png" alt="Logo" width="5%" height="5%" class="d-inline-block align-text-center" >
+      Preguntadort
     </a>
   </div>
 </nav>
-    </header>
     
-</nav>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - TP7_Aboudara_Garbarino_Kalinscky - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

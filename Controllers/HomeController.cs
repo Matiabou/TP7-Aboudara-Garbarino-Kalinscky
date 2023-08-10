@@ -32,6 +32,8 @@ public class HomeController : Controller
         if (ViewBag.pregunta == null)
             return View("Fin");
         ViewBag.respuestas = Juego.obtenerProximasRespuestas(ViewBag.pregunta.IDPregunta);
+        ViewBag.username = Juego._username;
+        ViewBag.puntajeActual = Juego._puntajeActual;
         return View("Juego");
     }
     [HttpPost] public IActionResult VerificarRespuesta(int IDPregunta, int IDRespuesta){
@@ -39,7 +41,7 @@ public class HomeController : Controller
         var nashe = Juego.obtenerProximasRespuestas(IDPregunta);
         foreach (var item in nashe)
         {
-            if (item.correcto)
+            if (item.correcta)
             ViewBag.respuestaCorrecta = item.contenido;
         }
         return View("Respuesta");

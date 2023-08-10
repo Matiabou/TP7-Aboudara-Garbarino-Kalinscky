@@ -70,7 +70,7 @@ public static class BD
             foreach (Pregunta preg in preguntas)
             {
                 sql = "SELECT * FROM Respuesta WHERE FKPregunta = @pPregunta";
-                listaRespuestas.Add(db.QueryFirstOrDefault<Respuesta>(sql, new {pPregunta = preg.IDPregunta}));
+                listaRespuestas = db.Query<Respuesta>(sql, new {pPregunta = preg.IDPregunta}).ToList();
             }
         }
         return listaRespuestas;

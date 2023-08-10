@@ -3,9 +3,9 @@ using System.Collections.Generic;
 namespace TP7_Aboudara_Garbarino_Kalinscky.Models;
 
 public static class Juego{
-    private static string _username;
-    private static int _puntajeActual = 0;
-    private static int _cantidadPreguntasCorrectas = 0;
+    public static string _username {get; private set;}
+    public static int _puntajeActual = 0;
+    public static int _cantidadPreguntasCorrectas = 0;
     private static List<Pregunta> _preguntas = new List<Pregunta>();
     private static List<Respuesta> _respuestas = new List<Respuesta>();
 

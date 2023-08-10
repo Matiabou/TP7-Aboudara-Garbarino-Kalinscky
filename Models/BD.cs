@@ -44,16 +44,16 @@ public static class BD
                     listaPreguntas = db.Query<Pregunta>(sql).ToList();
                 }
                 else {
-                    string sql = "SELECT * FROM Pregunta WHERE FK_IdCategoria = @pCategoria";
+                    string sql = "SELECT * FROM Pregunta WHERE FKCategoria = @pCategoria";
                     listaPreguntas = db.Query<Pregunta>(sql,new {pCategoria = categoria}).ToList();
                 }
             }
             else if(categoria == -1){
-                string sql = "SELECT * FROM Pregunta WHERE FK_IdDificultad = @pDificultad";
+                string sql = "SELECT * FROM Pregunta WHERE FKDificultad = @pDificultad";
                 listaPreguntas = db.Query<Pregunta>(sql,new {pDificultad = dificultad}).ToList();
             }
             else {
-            string sql = "SELECT * FROM Pregunta WHERE FK_IdCategoria = @pCategoria AND FK_IdDificultad = @pDificultad";
+            string sql = "SELECT * FROM Pregunta WHERE FKCategoria = @pCategoria AND FKDificultad = @pDificultad";
             listaPreguntas = db.Query<Pregunta>(sql,new {pCategoria = categoria, pDificultad = dificultad}).ToList();
             }
             
@@ -69,7 +69,7 @@ public static class BD
             string sql = "";
             foreach (Pregunta preg in preguntas)
             {
-                sql = "SELECT * FROM Respuesta WHERE FK_IdPregunta = @pPregunta";
+                sql = "SELECT * FROM Respuesta WHERE FKPregunta = @pPregunta";
                 listaRespuestas.Add(db.QueryFirstOrDefault<Respuesta>(sql, new {pPregunta = preg.IDPregunta}));
             }
         }

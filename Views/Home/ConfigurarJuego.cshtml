@@ -13,9 +13,10 @@
     <h1>Elige la Categoria</h1>
     <select class="form-select" aria-label="Default select example">
         <option selected value="-1">Mezcladas</option>
-        @foreach (Categoria item in ViewBag.listaCategoria)
+        @foreach (Categoria item in ViewBag.listaCategorias)
         {
             <option value=@item.IDCategoria>@item.nombre</option>
         }
     </select>
 </div>
+<a href='@Url.Action("Jugar")'><button type="button" class="btn btn-primary btn-lg"><b>Jugar</b></button></a>

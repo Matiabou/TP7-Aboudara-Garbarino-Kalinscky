@@ -7,7 +7,7 @@ namespace TP7_Aboudara_Garbarino_Kalinscky.Models;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost; DataBase=TP7-Aboudara-Garbarino-Kalinscky;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost; DataBase=PreguntadOrt;Trusted_Connection=True;";
 
     public static List<Categoria> listaCategorias = new List<Categoria>();
     public static List<Categoria> ObtenerCategorias() 

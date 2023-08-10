@@ -10,11 +10,12 @@
 
 <h1>@ViewBag.pregunta.enunciado</h1>
 
-<form method="post" action='@Url.Action("VerificarRespuesta, new {IDPregunta=@ViewBag.pregunta.IDPregunta}")'>
+<form method="post" action='@Url.Action("VerificarRespuesta", new {IDPregunta=@ViewBag.pregunta.IDPregunta})'>
 <p>Elija la respuesta:</p>
+<button type='submit' name='IDRespuesta' value="res.IDRespuesta">hola</button>
 @foreach (Respuesta res in ViewBag.respuestas)
 {
-    <input type='submit' name='IDRespuesta' value="res.IDRespuesta"> @res.contenido;
+    <button type='submit' name='IDRespuesta' value="res.IDRespuesta">hola</button>
 }
 
 </form>

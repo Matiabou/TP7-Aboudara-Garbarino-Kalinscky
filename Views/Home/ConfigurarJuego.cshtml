@@ -1,7 +1,8 @@
 
+<div class="ElegirDificultad">
 <div>
     <h1>Elige la Dificultad</h1>
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select" aria-label="Default select example" style="height: 50%">
         <option selected value="-1">Mezcladas</option>
         @foreach (Dificultad item in ViewBag.listaDificultades)
         {
@@ -9,13 +10,25 @@
         }
     </select>
 </div>
-<div>
+<div style="width: 40%">
     <h1>Elige la Categoria</h1>
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select" aria-label="Default select example" style="height: 50%">
         <option selected value="-1">Mezcladas</option>
         @foreach (Categoria item in ViewBag.listaCategorias)
         {
             <option value=@item.IDCategoria>@item.nombre</option>
         }
     </select>
+    </div>
+
+    </div>
+    <form>
+    <div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Username</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
 </div>

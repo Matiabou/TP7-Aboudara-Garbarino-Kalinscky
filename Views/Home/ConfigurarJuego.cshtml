@@ -2,13 +2,14 @@
 <div class="configuracion">
 @foreach (Dificultad item in ViewBag.listaDificultades)
 {
-    <button type="button" class="btn btn-primary" data-bs-toggle="button">Toggle button</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="button">@item.nombre</button>
 }
 </div>
 <h1>Elige la Categoria</h1>
 <div class="configuracion">
 @foreach (Categoria item in ViewBag.listaCategorias)
 {
-    <button type="button" class="btn btn-primary" data-bs-toggle="button">Toggle button</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="button">@item.nombre</button>
 }
 </div>
+<a href='@Url.Action("Jugar")'><button class="button-85" role="button">Jugar</button>

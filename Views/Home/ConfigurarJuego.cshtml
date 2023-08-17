@@ -1,0 +1,21 @@
+<form action='@Url.Action("Comenzar")'>
+    <h1>Elige la Dificultad</h1>
+    <div class="configuracion">
+        <button id="-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" value=-1>Mezclado</button>
+        @foreach (Dificultad item in ViewBag.listaDificultades)
+        {
+                <button id="'D' + @item.IDDificultad" onclick="onclickDificultad(@item.IDDificultad, ViewBag.ListaDificultades);" type="button" class="btn btn-primary btnCate" data-bs-toggle="button" value=@item.IDDificultad>@item.nombre</button>
+        }
+    </div>
+    <h1>Elige la Categoria</h1>
+    <div class="configuracion">
+        <button id="-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" value=-1>Mezclado</button>
+        @foreach (Categoria item in ViewBag.listaCategorias)
+        {
+            <button id="C@item.IDCategoria" type="button" class="btn btn-primary btnCate" data-bs-toggle="button" value=@item.IDCategoria>@item.nombre</button>
+        }
+    </div>
+    <div class="index-menu">
+        <button type="submit" class="button-85"><b>Jugar</b></button>
+    </div>
+</form>

@@ -3,7 +3,6 @@
 
 // Write your JavaScript code.
 
-function elegirDificultad(id)
 const bar = document.querySelector('.bar');
 const countdownElement = document.getElementById('countdown');
 const countdownDuration = 30; // Duración del contador en segundos

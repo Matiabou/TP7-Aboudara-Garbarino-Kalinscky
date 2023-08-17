@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "Juego";
 }
-
+<section class="infoJuego">
 <h3>Nombre de usuario: @ViewBag.username</h3>
 
 <h4>Puntaje: @ViewBag.puntajeActual </h4>
@@ -9,7 +9,7 @@
 <h4>Pregunta N°@ViewBag.pregunta.IDPregunta</h4>
 
 <h1>@ViewBag.pregunta.enunciado</h1>
-
+</section>
 <form method="post" action='@Url.Action("VerificarRespuesta", new {IDPregunta=@ViewBag.pregunta.IDPregunta})'>
 <p>Elija la respuesta:</p>
 @foreach (Respuesta res in ViewBag.respuestas)

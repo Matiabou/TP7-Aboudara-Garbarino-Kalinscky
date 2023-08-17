@@ -2,3 +2,11 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+function elegirdificultad(id)
+{
+    document.getElementById("dificultad").value = id;
+}
+function elegircategoria(id)
+{
+    document.getElementsByName("categoria").value = id;
+}

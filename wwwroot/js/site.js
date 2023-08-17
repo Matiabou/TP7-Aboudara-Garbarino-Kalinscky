@@ -23,3 +23,11 @@ const bar = document.querySelector('.bar');
   }
 
   updateCounter();
+function elegirdificultad(id)
+{
+    document.getElementById("dificultad").value = id;
+}
+function elegircategoria(id)
+{
+    document.getElementsByName("categoria").value = id;
+}

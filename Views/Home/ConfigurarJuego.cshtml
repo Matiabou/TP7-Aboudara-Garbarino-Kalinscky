@@ -1,10 +1,12 @@
-<form action='@Url.Action("Jugar")'style="text-align: center;">
+<form action='@Url.Action("Comenzar")' method="post">
     <h1 style="margin-top: 2%;">Elige la Dificultad</h1>
     <div class="configuracion" style="margin-top: 1%; margin-bottom: 2%;">
-        <button type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" value=-1>Mezclado</button>
+        <input type="hidden" name="dificultad" id="dificultad" value=-1>
+        <input type="hidden" name="categoria" value=-1>
+        <button type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" onclick="elegirdificultad(-1)">Mezclado</button>
         @foreach (Dificultad item in ViewBag.listaDificultades)
         {
-                <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" value=@item.IDDificultad>@item.nombre</button>
+                <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" onclick="elegirdificultad(@item.IDDificultad)">@item.nombre</button>
         }
     </div>
     <h1 style="margin-top: 3%;">Elige la Categoria</h1>
@@ -12,7 +14,7 @@
         <button type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" value=-1>Mezclado</button>
         @foreach (Categoria item in ViewBag.listaCategorias)
         {
-            <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" value=item.IDCategoria>@item.nombre</button>
+            <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" value=@item.IDCategoria>@item.nombre</button>
         }
     </div>
     <div class="form-group" style="border-radius: 20px">
@@ -22,3 +24,4 @@
         <button type="submit" class="button-85" style="width: 20%"><b style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger">Jugar</b></button>
     </div>
 </form>
+

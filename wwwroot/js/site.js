@@ -2,32 +2,47 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-const bar = document.querySelector('.bar');
-  const countdownElement = document.getElementById('countdown');
-  const countdownDuration = 30; // Duración del contador en segundos
-  let remainingTime = countdownDuration;
 
-  function updateBar() {
+function onclickDificultad(id, lista) {
+    if (document.getElementById("D" + lista[i].IDDificultad).active == true) {
+        for (let i = 0; i < lista.length; i++) {
+            if (lista[i].IDDificultad != id)
+                document.getElementById("D" + lista[i].IDDificultad).active = false;
+        }
+    }
+
+}
+function onclickCategoria(id, lista) {
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i].IDCategoria != id)
+            document.getElementById("C" + lista[i].IDCategoria).active = false;
+    }
+}
+function elegirDificultad(id)
+const bar = document.querySelector('.bar');
+const countdownElement = document.getElementById('countdown');
+const countdownDuration = 30; // Duración del contador en segundos
+let remainingTime = countdownDuration;
+
+function updateBar() {
     const progress = (countdownDuration - remainingTime) / countdownDuration;
     const barWidth = `${progress * 100}%`;
     bar.style.width = barWidth;
-  }
+}
 
-  function updateCounter() {
+function updateCounter() {
     if (remainingTime > 0) {
-      remainingTime--;
-      updateBar();
-      countdownElement.textContent = remainingTime;
-      setTimeout(updateCounter, 1000); // Actualizar cada segundo
+        remainingTime--;
+        updateBar();
+        countdownElement.textContent = remainingTime;
+        setTimeout(updateCounter, 1000); // Actualizar cada segundo
     }
-  }
+}
 
-  updateCounter();
-function elegirdificultad(id)
-{
+updateCounter();
+function elegirDificultad(id) {
     document.getElementById("dificultad").value = id;
 }
-function elegircategoria(id)
-{
-    document.getElementsByName("categoria").value = id;
+function elegirCategoria(id) {
+    document.getElementById("categoria").value = id;
 }

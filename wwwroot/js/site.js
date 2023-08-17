@@ -18,7 +18,6 @@ function onclickCategoria(id, lista) {
             document.getElementById("C" + lista[i].IDCategoria).active = false;
     }
 }
-function elegirDificultad(id)
 const bar = document.querySelector('.bar');
 const countdownElement = document.getElementById('countdown');
 const countdownDuration = 30; // Duración del contador en segundos

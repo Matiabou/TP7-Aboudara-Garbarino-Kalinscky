@@ -1,8 +1,8 @@
 <form action='@Url.Action("Comenzar")' method="post" style="text-align: center">
     <h1 style="margin-top: 2%;">Elige la Dificultad</h1>
     <div class="configuracion">
-        <input type="hidden" id="dificultad" value=-1>
-        <input type="hidden" id="categoria" value=-1>
+        <input type="hidden" name="dificultad"id="dificultad" value=-1>
+        <input type="hidden" name="categoria"id="categoria" value=-1>
         <button type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" onclick="elegirDificultad(-1)">Mezclado</button>
         @foreach (Dificultad item in ViewBag.listaDificultades)
         {
@@ -11,7 +11,7 @@
     </div>
     <h1 style="margin-top: 3%;">Elige la Categoria</h1>
     <div class="configuracion">
-        <button id="-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" onclick="elegirCategoria(-1)">Mezclado</button>
+        <button id="-1" type="button"  class="btn btn-primary active btnCate" data-bs-toggle="button" onclick="elegirCategoria(-1)">Mezclado</button>
         @foreach (Categoria item in ViewBag.listaCategorias)
         {
             <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" onclick="elegirCategoria(@item.IDCategoria)">@item.nombre</button>
@@ -19,7 +19,7 @@
     </div>
     <div style="text-align:center">
     <div class="form-group" style="border-radius: 20px; width:20%">
-            <input type="text" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
+            <input type="text" name="username" id="username" placeholder="Ingresa tu nombre de usuario" required>
     </div>
     </div>
     <div class="index-menu" style="margin-top:5%">

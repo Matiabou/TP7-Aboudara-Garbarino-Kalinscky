@@ -18,3 +18,11 @@ function onclickCategoria(id, lista){
         document.getElementById("C"+lista[i].IDCategoria).active = false;
     }
 }
+function elegirDificultad(id)
+{
+    document.getElementById("dificultad").value = id;
+}
+function elegirCategoria(id)
+{
+    document.getElementById("categoria").value = id;
+}

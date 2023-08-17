@@ -17,8 +17,8 @@ public static class Juego{
         return BD.ObtenerDificultades();
     }
     public static bool CargarPartida(string username, int dificultad, int categoria){
-        _username = username;
-        _preguntas = BD.ObtenerPreguntas(dificultad, categoria);
+        _username = "hola";
+        _preguntas = BD.ObtenerPreguntas(1, 1);
         _respuestas = BD.ObtenerRespuestas(_preguntas);
         return _preguntas.Count() > 0;
     }

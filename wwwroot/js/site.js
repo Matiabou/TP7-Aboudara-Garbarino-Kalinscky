@@ -8,5 +8,5 @@ function elegirdificultad(id)
 }
 function elegircategoria(id)
 {
-    document.getElementsByName("categoria").value = id;
+    document.getElementById("categoria").value = id;
 }

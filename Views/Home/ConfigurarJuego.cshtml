@@ -3,18 +3,18 @@
     <div class="configuracion">
         <input type="hidden" id="dificultad" value=-1>
         <input type="hidden" id="categoria" value=-1>
-        <button type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" onclick="elegirDificultad(-1)">Mezclado</button>
+        <button id="D-1"type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" onclick="elegirDificultad(-1)">Mezclado</button>
         @foreach (Dificultad item in ViewBag.listaDificultades)
         {
-                <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" onclick="elegirDificultad(@item.IDDificultad)">@item.nombre</button>
+                <button type="button" id="D+@item.IDDificultad" class="btn btn-primary btnCate" data-bs-toggle="button" onclick="elegirDificultad(@item.IDDificultad, ViewBag.listaDificultades)">@item.nombre</button>
         }
     </div>
     <h1 style="margin-top: 3%;">Elige la Categoria</h1>
     <div class="configuracion">
-        <button id="-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" onclick="elegirCategoria(-1)">Mezclado</button>
+        <button id="C-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" onclick="elegirCategoria(-1)">Mezclado</button>
         @foreach (Categoria item in ViewBag.listaCategorias)
         {
-            <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" onclick="elegirCategoria(@item.IDCategoria)">@item.nombre</button>
+            <button type="button" id="C+@item.IDCategoria"class="btn btn-primary btnCate" data-bs-toggle="button" onclick="elegirCategoria(@item.IDCategoria, ViewBag.listaCategoria)">@item.nombre</button>
         }
     </div>
     <div class="form-group" style="border-radius: 20px">

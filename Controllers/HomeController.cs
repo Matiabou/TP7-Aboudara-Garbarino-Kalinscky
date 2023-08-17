@@ -23,7 +23,7 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Comenzar(string username, int dificultad, int categoria){
-        if (!Juego.CargarPartida(username, dificultad, categoria));
+        if (!Juego.CargarPartida(username, dificultad, categoria))
             return RedirectToAction("ConfigurarJuego");
         return RedirectToAction("Jugar");
     }

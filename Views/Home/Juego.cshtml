@@ -1,10 +1,13 @@
 @{
     ViewData["Title"] = "Juego";
 }
+<div style="align-items: center; justify-content: center; text-align: center;">
 <section class="infoJuego">
-<h3>Nombre de usuario: @ViewBag.username</h3>
+<div style="float: right">
+<h3>@ViewBag.username</h3>
 
 <h4>Puntaje: @ViewBag.puntajeActual </h4>
+</div>
 
 <h4>Pregunta N°@ViewBag.pregunta.IDPregunta</h4>
 
@@ -14,7 +17,7 @@
 <p>Elija la respuesta:</p>
 @foreach (Respuesta res in ViewBag.respuestas)
 {
-    <button type='submit' name='IDRespuesta' value="res.IDRespuesta">hola</button>
+    <button type='submit' name='IDRespuesta' value="@res.IDRespuesta">hola</button>
 }
 </form>
 
@@ -24,4 +27,5 @@
     <div class="bar"></div>
   </div>
   <div class="timer">Tiempo restante:  <span id="countdown">30</span> segundos</div>
+</div>
 </div>

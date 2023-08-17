@@ -51,10 +51,15 @@ div{
 .index-menu{
   display: flex;
   justify-content: center;
+  
+}
+.index-menu::after{
+  content: "";
+  display: block;
+  clear: both;
 }
 .index-menu a {
   width: 50%;
-  margin: 3%;
 }
 .index-menu button {
   width: 100%;
@@ -147,9 +152,14 @@ font-size: 100px;
   border: 2px solid black;
   color: black;
 }
+.configuracion{
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
 .configuracion button:hover{
   background-color: rgb(63, 63, 63);
   border: 2px solid rgb(63, 63, 63);
+  transform: scale(1.03);
 }
 .configuracion button.active{
   background-color: rgb(63, 63, 63);
@@ -158,4 +168,62 @@ font-size: 100px;
 .button-85 text{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: xx-large;
+}
+.nueva-linea {
+  display: block;
+}
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.bar-container {
+  position: relative;
+  width: 300px;
+  height: 20px;
+  border: 1px solid #21c900;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; /* Start with 0 width */
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.911);
+  transition: width 1s linear; /* Smooth animation */
+}
+
+.timer {
+  font-size: 24px;
+  
 }

@@ -1,5 +1,5 @@
 <form action='@Url.Action("Comenzar")' method="post">
-    <h1>Elige la Dificultad</h1>
+    <h1 style="margin-top: 2%;">Elige la Dificultad</h1>
     <div class="configuracion">
         <input type="hidden" id="dificultad" value=-1>
         <input type="hidden" id="categoria" value=-1>
@@ -9,7 +9,7 @@
                 <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" onclick="elegirDificultad(@item.IDDificultad)">@item.nombre</button>
         }
     </div>
-    <h1>Elige la Categoria</h1>
+    <h1 style="margin-top: 3%;">Elige la Categoria</h1>
     <div class="configuracion">
         <button id="-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" onclick="elegirCategoria(-1)">Mezclado</button>
         @foreach (Categoria item in ViewBag.listaCategorias)
@@ -17,8 +17,11 @@
             <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" onclick="elegirCategoria(@item.IDCategoria)">@item.nombre</button>
         }
     </div>
-    <div class="index-menu">
-        <button type="submit" class="button-85"><b>Jugar</b></button>
+    <div class="form-group" style="border-radius: 20px">
+            <input type="text" id="username" name="username" placeholder="Ingresa tu nombre de usuario" required>
+    </div>
+    <div class="index-menu" style="margin-top:5%">
+        <button type="submit" class="button-85" style="width: 20%"><b style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger">Jugar</b></button>
     </div>
 </form>
 

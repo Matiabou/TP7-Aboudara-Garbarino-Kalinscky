@@ -3,16 +3,15 @@
 }
 <div style="align-items: center; justify-content: center; text-align: center;">
 <section class="infoJuego">
-<div style="float: right">
 <h3>@ViewBag.username</h3>
-
 <h4>Puntaje: @ViewBag.puntajeActual </h4>
+<div>
+<div>
+  <h4>Pregunta N°@ViewBag.pregunta.IDPregunta</h4>
+  <h1>@ViewBag.pregunta.enunciado</h1>
 </div>
-
-<h4>Pregunta N°@ViewBag.pregunta.IDPregunta</h4>
-
-<h1>@ViewBag.pregunta.enunciado</h1>
 </section>
+<div style="width: 100%">
 <form method="post" action='@Url.Action("VerificarRespuesta", new {IDPregunta=@ViewBag.pregunta.IDPregunta})'>
 <p>Elija la respuesta:</p>
 @foreach (Respuesta res in ViewBag.respuestas)
@@ -20,7 +19,7 @@
     <button type='submit' name='IDRespuesta' value="@res.IDRespuesta">hola</button>
 }
 </form>
-
+<div>
 
 <div class="container">
   <div class="bar-container">

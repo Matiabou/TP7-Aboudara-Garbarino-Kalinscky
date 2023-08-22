@@ -14,19 +14,8 @@ function updateBar() {
     bar.style.width = barWidth;
 }
 
-function updateCounter() {
-    if (remainingTime > 0) {
-        remainingTime--;
-        updateBar();
-        countdownElement.textContent = remainingTime;
-        setTimeout(updateCounter, 1000); // Actualizar cada segundo
-    }
-}
-
-updateCounter();
-
 function elegirDificultad(id, lista) {
-    alert(id);
+    alert(1);
     document.getElementById("dificultad").value = id;
     document.getElementById("D-1").class = "btn btn-primary btnCate";
     for (let i = 1; i < lista.length; i++) {

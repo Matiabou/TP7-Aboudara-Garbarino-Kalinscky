@@ -62,15 +62,20 @@ public static class BD
     }
 
     private static List<Respuesta> listaRespuestas = new List<Respuesta>();
+     private static List<Respuesta> hola = new List<Respuesta>();
     public static List<Respuesta> ObtenerRespuestas(List<Pregunta> preguntas)
     {
+        
         using(SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "";
             foreach (Pregunta preg in preguntas)
             {
                 sql = "SELECT * FROM Respuesta WHERE IDPregunta = @pPregunta";
-                listaRespuestas = db.Query<Respuesta>(sql, new {pPregunta = preg.IDPregunta}).ToList();
+                hola = db.Query<Respuesta>(sql, new {pPregunta = preg.IDPregunta}).ToList();
+                foreach (Respuesta res in hola) {
+                    listaRespuestas.Add(res);
+                }
             }
         }
         return listaRespuestas;

@@ -16,7 +16,7 @@
 <p>Elija la respuesta:</p>
 @foreach (Respuesta res in ViewBag.respuestas)
 {
-    <button type='submit' name='IDRespuesta' value="@res.IDRespuesta">hola</button>
+    <button type='submit' name='IDRespuesta' value="@res.IDRespuesta">@res.contenido</button>
 }
 </form>
 </div>

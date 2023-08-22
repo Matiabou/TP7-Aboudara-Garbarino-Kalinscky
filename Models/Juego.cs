@@ -25,7 +25,7 @@ public static class Juego{
     public static Pregunta obtenerProximaPregunta(){
         if (_preguntas.Count() > 0){
             Random r = new Random();
-            return _preguntas[r.Next(_respuestas.Count() - 1)];
+            return _preguntas[r.Next(_preguntas.Count() - 1)];
         }
         else
             return new Pregunta();

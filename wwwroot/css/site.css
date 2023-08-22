@@ -204,9 +204,9 @@ font-size: 100px;
 
 .bar-container {
   position: relative;
-  width: 300px;
+  width: 25%;
   height: 20px;
-  border: 1px solid #21c900;
+  border: 1px solid #07d374;
   overflow: hidden;
   margin-right: 20px;
 }
@@ -215,10 +215,10 @@ font-size: 100px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 0; /* Start with 0 width */
+  width: 0;
   height: 100%;
   background-color: rgba(255, 0, 0, 0.911);
-  transition: width 1s linear; /* Smooth animation */
+  transition: width 1s linear;
 }
 
 .timer {

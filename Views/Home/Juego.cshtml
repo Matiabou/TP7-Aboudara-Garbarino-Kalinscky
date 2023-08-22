@@ -1,17 +1,17 @@
 @{
     ViewData["Title"] = "Juego";
 }
-<div style="align-items: center; justify-content: center; text-align: center;">
-<section class="infoJuego">
+<div style="display: flex; flex-direction: column">
+<div style="float: left; clear: both;">
 <h3>@ViewBag.username</h3>
 <h4>Puntaje: @ViewBag.puntajeActual </h4>
-<div>
+</div>
 <div>
   <h4>Pregunta N°@ViewBag.pregunta.IDPregunta</h4>
   <h1>@ViewBag.pregunta.enunciado</h1>
 </div>
-</section>
-<div style="width: 100%">
+
+<div style="width: 100%; display: flex;">
 <form method="post" action='@Url.Action("VerificarRespuesta", new {IDPregunta=@ViewBag.pregunta.IDPregunta})'>
 <p>Elija la respuesta:</p>
 @foreach (Respuesta res in ViewBag.respuestas)
@@ -26,5 +26,6 @@
     <div class="bar"></div>
   </div>
   <div class="timer">Tiempo restante:  <span id="countdown">30</span> segundos</div>
+</div>
 </div>
 </div>

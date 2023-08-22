@@ -1,21 +1,34 @@
-<form action='@Url.Action("Jugar")'>
-    <h1>Elige la Dificultad</h1>
+<form action='@Url.Action("Comenzar")' method="post" style="text-align: center">
+    <h1 style="margin-top: 2%;">Elige la Dificultad</h1>
     <div class="configuracion">
-        <button type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" value=-1>Mezclado</button>
+        <input type="hidden" name="dificultad" id="dificultad" value=-1>
+        <input type="hidden" name="categoria" id="categoria" value=-1>
+        <button id="D-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button"
+            onclick="elegirDificultad(-1, @ViewBag.listaDificultades)">Mezclado</button>
         @foreach (Dificultad item in ViewBag.listaDificultades)
         {
-                <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" value=@item.IDDificultad>@item.nombre</button>
+            <button type="button" id="D+@item.IDDificultad" class="btn btn-primary btnCate" data-bs-toggle="button"
+                onclick="elegirDificultad(@item.IDDificultad, @ViewBag.listaDificultades)">@item.nombre</button>
         }
     </div>
-    <h1>Elige la Categoria</h1>
+    <h1 style="margin-top: 3%;">Elige la Categoria</h1>
     <div class="configuracion">
-        <button type="button" class="btn btn-primary active btnCate" data-bs-toggle="button" value=-1>Mezclado</button>
+        <button id="C-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button"
+            onclick="elegirCategoria(-1)">Mezclado</button>
         @foreach (Categoria item in ViewBag.listaCategorias)
         {
-            <button type="button" class="btn btn-primary btnCate" data-bs-toggle="button" value=item.IDCategoria>@item.nombre</button>
+            <button type="button" id="C+@item.IDCategoria" class="btn btn-primary btnCate" data-bs-toggle="button"
+                onclick="elegirCategoria(@item.IDCategoria, @ViewBag.listaCategoria)">@item.nombre</button>
         }
     </div>
-    <div class="index-menu">
-        <button type="submit" class="button-85"><b>Jugar</b></button>
+    <div style="text-align:center">
+        <div class="form-group" style="border-radius: 20px; width:20%">
+            <input type="text" name="username" id="username" placeholder="Ingresa tu nombre de usuario" required>
+        </div>
+    </div>
+    <div class="index-menu" style="margin-top:5%">
+        <button type="submit" class="button-85" style="width: 20%">
+            <b style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger">Jugar</b>
+        </button>
     </div>
 </form>

@@ -17,20 +17,21 @@ function updateBar() {
 function elegirDificultad(id, lista) {
     alert(1);
     document.getElementById("dificultad").value = id;
-    document.getElementById("D-1").class = "btn btn-primary btnCate";
+    document.getElementById("D-1").className = "btn btn-primary btnCate";
     for (let i = 1; i < lista.length; i++) {
         alert(i);
-        if (document.getElementById(lista[i].IDDificultad) != id)
-        document.getElementById("D+" + lista[i].IDDificultad).class = "btn btn-primary btnCate"
+        if (lista[i].IDDificultad !== id)
+        document.getElementById("D+" + lista[i].IDDificultad).className = "btn btn-primary btnCate"
     }
     
 }
 function elegirCategoria(id, lista) {
+    alert(1);
     document.getElementById("categoria").value = id;
-    document.getElementById("C-1").class = "btn btn-primary btnCate";
-    for (let i = 1; i <= lista.length; i++) {
-        if (document.getElementById("C+" + lista[i].IDCategoria) != "C+" + id)
-        document.getElementById("C+" + lista[i].IDCategoria).class = "btn btn-primary btnCate"
+    document.getElementById("C-1").className = "btn btn-primary btnCate";
+    for (let i = 1; i < lista.length; i++) {
+        if (lista[i].IDCategoria !== id)
+        document.getElementById("C+" + lista[i].IDCategoria).className = "btn btn-primary btnCate"
     }
    
 }

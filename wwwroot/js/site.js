@@ -24,6 +24,10 @@ function elegirCategoria(id) {
     }
    
 }
+function respuesta(){
+    document.getElementById('V').style = "background-color: rgb(32, 255, 32); color: white;";
+    document.getElementById('F').style = "background-color: red; color: white;";
+}
 const bar = document.querySelector('.bar');
     const countdownElement = document.getElementById('countdown');
     const countdownDuration = 30; // Duración del contador en segundos

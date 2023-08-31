@@ -23,10 +23,16 @@
 <div class="button-container">
   <div class="button-row">
   <form method="post" class="button-form" action='@Url.Action("VerificarRespuesta", new {IDPregunta=@ViewBag.pregunta.IDPregunta})'>
+  @{
+    int cont = 1;
+  }
   @foreach (Respuesta res in ViewBag.respuestas)
   {
-      <button type='submit' name='IDRespuesta' value="@res.IDRespuesta">@res.contenido
-      </button>
+
+      if(cont<5) {
+<button type='submit' name='IDRespuesta' value="@res.IDRespuesta">@res.contenido</button>
+      }
+        cont = cont + 1;
   }
 </form>
 </div>

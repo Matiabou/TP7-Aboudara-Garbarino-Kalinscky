@@ -14,10 +14,17 @@
 <div style="width: 100%; display: flex;">
 <form method="post" action='@Url.Action("VerificarRespuesta", new {IDPregunta=@ViewBag.pregunta.IDPregunta})'>
 <p>Elija la respuesta:</p>
+<div class="center-container">
+<div class="center-box" style="margin-top: -10%;">
 @foreach (Respuesta res in ViewBag.respuestas)
 {
-    <button type='submit' name='IDRespuesta' value="@res.IDRespuesta">@res.contenido</button>
+   <div class="button-form">
+            <button type='submit' name='IDRespuesta' value="@res.IDRespuesta">@res.contenido</button>
+          </div>
+    
 }
+  </div>
+  </div>
 </form>
 </div>
 <div class="container" style="margin-top: 5%; display: flex; flex-direction: column; justify-content: center;">

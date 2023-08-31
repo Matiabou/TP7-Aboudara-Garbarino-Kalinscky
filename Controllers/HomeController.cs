@@ -30,7 +30,7 @@ public class HomeController : Controller
     }
     public IActionResult Jugar(){
         ViewBag.pregunta = Juego.obtenerProximaPregunta();
-        if (ViewBag.pregunta == null)
+        if (ViewBag.pregunta.IDPregunta == null || ViewBag.pregunta.IDPregunta == 0)
             return View("Fin");
         ViewBag.respuestas = Juego.obtenerProximasRespuestas(ViewBag.pregunta.IDPregunta);
         ViewBag.username = Juego._username;

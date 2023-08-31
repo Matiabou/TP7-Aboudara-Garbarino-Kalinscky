@@ -14,24 +14,23 @@ function updateBar() {
     bar.style.width = barWidth;
 }
 
-function elegirDificultad(id, lista) {
-    alert(1);
+function elegirDificultad(id) {
     document.getElementById("dificultad").value = id;
     document.getElementById("D-1").className = "btn btn-primary btnCate";
-    for (let i = 1; i < lista.length; i++) {
-        alert(i);
-        if (lista[i].IDDificultad !== id)
-        document.getElementById("D+" + lista[i].IDDificultad).className = "btn btn-primary btnCate"
+    for (let i = 1; i <= 4; i++) {
+        if (i !== id){
+        document.getElementById("D+" + i).className = "btn btn-primary btnCate";
+        }
     }
     
 }
-function elegirCategoria(id, lista) {
-    alert(1);
+function elegirCategoria(id) {
     document.getElementById("categoria").value = id;
     document.getElementById("C-1").className = "btn btn-primary btnCate";
-    for (let i = 1; i < lista.length; i++) {
-        if (lista[i].IDCategoria !== id)
-        document.getElementById("C+" + lista[i].IDCategoria).className = "btn btn-primary btnCate"
+    for (let i = 1; i <= 6; i++) {
+        if (i !== id){
+        document.getElementById("C+" + i).className = "btn btn-primary btnCate";
+        }
     }
    
 }

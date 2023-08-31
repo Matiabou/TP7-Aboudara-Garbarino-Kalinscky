@@ -4,21 +4,21 @@
         <input type="hidden" name="dificultad" id="dificultad" value=-1>
         <input type="hidden" name="categoria" id="categoria" value=-1>
         <button id="D-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button"
-            onclick="elegirDificultad(-1, @Json.Serialize(ViewBag.listaDificultades))">Mezclado</button>
+            onclick="elegirDificultad(-1)">Mezclado</button>
         @foreach (Dificultad item in ViewBag.listaDificultades)
         {
             <button type="button" id="D+@item.IDDificultad" class="btn btn-primary btnCate" data-bs-toggle="button"
-                onclick="elegirDificultad(@item.IDDificultad, @Json.Serialize(ViewBag.listaDificultades))">@item.nombre</button>
+                onclick="elegirDificultad(@item.IDDificultad)">@item.nombre</button>
         }
     </div>
     <h1 style="margin-top: 3%;">Elige la Categoria</h1>
     <div class="configuracion">
         <button id="C-1" type="button" class="btn btn-primary active btnCate" data-bs-toggle="button"
-            onclick="elegirCategoria(-1, @Json.Serialize(ViewBag.listaCategoria))">Mezclado</button>
+            onclick="elegirCategoria(-1)">Mezclado</button>
         @foreach (Categoria item in ViewBag.listaCategorias)
         {
             <button type="button" id="C+@item.IDCategoria" class="btn btn-primary btnCate" data-bs-toggle="button"
-                onclick="elegirCategoria(@item.IDCategoria, @Json.Serialize(ViewBag.listaCategoria))">@item.nombre</button>
+                onclick="elegirCategoria(@item.IDCategoria)">@item.nombre</button>
         }
     </div>
     <div style="text-align:center; display: flex;">

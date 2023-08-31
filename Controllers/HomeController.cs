@@ -26,9 +26,11 @@ public class HomeController : Controller
         if (!Juego.CargarPartida(username, dificultad, categoria)){
             return RedirectToAction("ConfigurarJuego");
         }
-        return RedirectToAction("Jugar");
+        return Jugar();
     }
-    public IActionResult Jugar(){
+    public IActionResult Jugar(int IDPregunta = 0, int IDRespuesta = 0){
+        if (IDRespuesta != 0)
+            Juego.verificarRespuesta(IDPregunta, IDRespuesta);
         ViewBag.pregunta = Juego.obtenerProximaPregunta();
         if (ViewBag.pregunta.IDPregunta == null || ViewBag.pregunta.IDPregunta == 0)
             return View("Fin");
@@ -36,16 +38,6 @@ public class HomeController : Controller
         ViewBag.username = Juego._username;
         ViewBag.puntajeActual = Juego._puntajeActual;
         return View("Juego");
-    }
-    [HttpPost] public IActionResult VerificarRespuesta(int IDPregunta, int IDRespuesta){
-        ViewBag.correcto = Juego.verificarRespuesta(IDPregunta, IDRespuesta);
-        var nashe = Juego.obtenerProximasRespuestas(IDPregunta);
-        foreach (var item in nashe)
-        {
-            if (item.correcta)
-            ViewBag.respuestaCorrecta = item.contenido;
-        }
-        return View("Respuesta");
     }
     public IActionResult Privacy()
     {

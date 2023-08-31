@@ -22,6 +22,7 @@
       <div class="button-container">
         <div class="button-row">
           <form method="post" class="button-form" action='@Url.Action("Jugar", new {IDPregunta=@ViewBag.pregunta.IDPregunta})'>
+          <input type="hidden" name="IDRespuesta" id="Respuesta" value=-1>
           @{
            int cont = 1;
           }
@@ -29,14 +30,19 @@
             {
               if(cont<5) {
               @if (res.correcta){
-                <button id='V' onclick='respuesta();' type='submit' name='IDRespuesta' value="@res.IDRespuesta">@res.contenido</button>
+                <button type="button" id='V' onclick='respuesta(@res.IDRespuesta);'>@res.contenido</button>
               }
               else{
-                <button id='F' onclick='respuesta();' type='submit' name='IDRespuesta' value="@res.IDRespuesta">@res.contenido</button>
+                <button type="button" id='F' onclick='respuesta(@res.IDRespuesta);'>@res.contenido</button>
               }
               }
               cont = cont + 1;
             }
+            <div  style="margin-top:5%; display:flex; justify-content: center;">
+        <button id='Continuar' hidden type="submit" class="button-85" style=" width: 100%">
+            <b style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: larger;">Próxima pregunta</b>
+        </button>
+    </div>
           </form>
         </div>
       </div>

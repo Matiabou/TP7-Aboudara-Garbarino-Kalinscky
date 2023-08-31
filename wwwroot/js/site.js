@@ -24,9 +24,15 @@ function elegirCategoria(id) {
     }
    
 }
-function respuesta(){
+function respuesta(id){
+    document.getElementById('Respuesta').value = id;
     document.getElementById('V').style = "background-color: rgb(32, 255, 32); color: white;";
     document.getElementById('F').style = "background-color: red; color: white;";
+    document.getElementById('F').id = "F1";
+    document.getElementById('F').style = "background-color: red; color: white;";
+    document.getElementById('F').id = "F2";
+    document.getElementById('F').style = "background-color: red; color: white;";
+    document.getElementById('Continuar').hidden = false;
 }
 const bar = document.querySelector('.bar');
     const countdownElement = document.getElementById('countdown');

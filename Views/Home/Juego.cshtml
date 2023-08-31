@@ -30,7 +30,7 @@
   {
 
       if(cont<5) {
-<button type='submit' name='IDRespuesta' value="@res.IDRespuesta">@res.contenido</button>
+<button type='submit' name='IDRespuesta' value="@res.IDRespuesta"data-correct="@res.correcta">@res.contenido</button>
       }
         cont = cont + 1;
   }
@@ -45,3 +45,22 @@
 </div>
 </div>
 </div>
+<script>
+    var countdown = 2; // Tiempo en segundos
+    var timer = setInterval(function () {
+        countdown--;
+        document.getElementById("countdown").textContent = countdown;
+        if (countdown <= 0) {
+            clearInterval(timer);
+            SeleccionarRespuestaIncorrecta();
+        }
+    }, 1000);
+
+    function SeleccionarRespuestaIncorrecta() {
+        var respuestaIncorrectaButtons = document.querySelectorAll('.button-row button:not([data-correct="true"])');
+        if (respuestaIncorrectaButtons.length > 0) {
+            var randomIndex = Math.floor(Math.random() * respuestaIncorrectaButtons.length);
+            respuestaIncorrectaButtons[randomIndex].click();
+        }
+    }
+</script>

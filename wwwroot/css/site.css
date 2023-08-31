@@ -11,6 +11,7 @@ body{
   background-position: center;
   background-attachment: fixed;
   position: sticky;
+  font-family: 'Chewy', cursive;
 }
 html {
   font-size: 14px;
@@ -116,7 +117,7 @@ div{
   background-color:#2be9d9;
   border: none;
   color: black;
-  padding:  80px;
+  padding: 40px 80px;
   border-radius: 15px;
   margin: 6px; 
   margin-left: 9px;

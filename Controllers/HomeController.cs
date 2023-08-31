@@ -30,11 +30,11 @@ public class HomeController : Controller
     }
     public IActionResult Jugar(){
         ViewBag.pregunta = Juego.obtenerProximaPregunta();
-        if (ViewBag.pregunta.IDPregunta == null || ViewBag.pregunta.IDPregunta == 0)
-            return View("Fin");
         ViewBag.respuestas = Juego.obtenerProximasRespuestas(ViewBag.pregunta.IDPregunta);
         ViewBag.username = Juego._username;
         ViewBag.puntajeActual = Juego._puntajeActual;
+        if (ViewBag.pregunta.IDPregunta == null || ViewBag.pregunta.IDPregunta == 0)
+            return View("Fin");
         return View("Juego");
     }
     [HttpPost] public IActionResult VerificarRespuesta(int IDPregunta, int IDRespuesta){

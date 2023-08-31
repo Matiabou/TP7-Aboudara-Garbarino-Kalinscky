@@ -1,13 +1,13 @@
 <div class="center-container">
         <div class="center-box" style="margin-top: -10%;">
           <div class="center-text">
-            <h4>Maxi Garba</h4>
+            <h4>@ViewBag.username</h4>
             <hr class="horizontal-line">
-            <h1>Puntaje final: 7650</h1>
+            <h1>Puntaje final: @ViewBag.Puntaje</h1>
           </div>
           <div style="display: flex; margin-top: 5%; ">
             <div class="index-menu" class="nueva-linea" style="width: 30%;">
-                <a href='ConfigurarJuego.html'><button class="button-84"><b>Volver a jugar</b></button></a>
+                <a href='@Url.Action("ConfigurarJuego")'><button class="button-84"><b>Volver a jugar</b></button></a>
             </div>
         </div>
     </div>

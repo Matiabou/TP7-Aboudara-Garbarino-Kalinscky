@@ -301,3 +301,9 @@ font-size: 100px;
 .btn:focus{
   box-shadow: none;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border: 3px solid black;
+}

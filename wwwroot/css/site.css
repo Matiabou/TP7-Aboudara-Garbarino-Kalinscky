@@ -127,7 +127,7 @@ div{
   margin-left: 9px;
   margin-right: 9px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 1s ease;
   width: 400px;
   font-size: 24px;
   font-weight: bold;
@@ -249,6 +249,9 @@ font-size: 100px;
 .button-85 text{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: xx-large;
+}
+button{
+  transition-duration: 2s;
 }
 .nueva-linea {
   display:flex;

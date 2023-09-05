@@ -30,10 +30,10 @@
             {
               if(cont<5) {
               @if (res.correcta){
-                <button type="button" id='V' onclick='respuesta(@res.IDRespuesta);'>@res.contenido</button>
+                <button type="button" id='V' class='@res.IDRespuesta' onclick='respuesta(@res.IDRespuesta);'>@res.contenido</button>
               }
               else{
-                <button type="button" id='F' onclick='respuesta(@res.IDRespuesta);'>@res.contenido</button>
+                <button type="button" id='F' class='@res.IDRespuesta' onclick='respuesta(@res.IDRespuesta);'>@res.contenido</button>
               }
               }
               cont = cont + 1;
@@ -46,7 +46,7 @@
           </form>
         </div>
       </div>
-      <div class="container" style="margin-top: 2%; display: flex; flex-direction: column; justify-content: center; text-align: center; align-items: center;">
+      <div id="tiempo" class="container" style="margin-top: 2%; display: flex; flex-direction: column; justify-content: center; text-align: center; align-items: center;">
         <div class="bar-container" style="margin: 0px">
           <div class="bar"></div>
         </div>

@@ -26,7 +26,7 @@ function elegirCategoria(id) {
 }
 function respuesta(id){
     document.getElementById('Respuesta').value = id;
-    document.getElementById('V').style = "background-color: rgb(32, 255, 32); color: white;";
+    document.getElementById('V').style = "background-color: rgb(45, 226, 9); color: white;";
     document.getElementById('F').style = "background-color: red; color: white;";
     document.getElementById('F').id = "F1";
     document.getElementById('F').style = "background-color: red; color: white;";

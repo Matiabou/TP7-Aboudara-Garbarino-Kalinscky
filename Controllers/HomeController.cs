@@ -36,7 +36,10 @@ public class HomeController : Controller
         ViewBag.username = Juego._username;
         ViewBag.puntajeActual = Juego._puntajeActual;
         if (ViewBag.pregunta.IDPregunta == null || ViewBag.pregunta.IDPregunta == 0)
+        {
+            Juego._puntajeActual = 0;
             return View("Fin");
+        }
         return View("Juego");
     }
     public IActionResult Privacy()
